@@ -1,3 +1,30 @@
+#importing depensencies
+import numpy as np
+import pandas as pd
+from matplotlib import pyplot as plt
+from sklearn.datasets import load_boston
+#understanding the dataset
+boston=load_boston()
+print(boston.DESCR)
+#access data attributes
+dataset=boston.data
+for name,index in enumerate(boston.feature_name):
+print(index,name)
+#reshaping data
+data=dataset[:,12].reshape(-1,1)
+#shape of the data
+np.shape(dataset)
+#target values
+target=boston.target.reshape(-1,1)
+#shape of target
+np.shape(target)
+#ensuring that matplotlib is working inside the notebook
+%matplotlib inline
+plt.scatter(data,target,color='green')
+plt.xlabel('lower income population')
+plt.ylabel('cost of house')
+plt.show()
+
 #regression
 from sklearn.linear_model import
 LinearRegression/lasso/Ridge
