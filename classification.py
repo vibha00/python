@@ -1,3 +1,14 @@
+#importing dependencies
+import numpy as np
+import pandas as pd
+from matplotlib import pyplot as plt
+from sklearn.ensemble import RandomForestClassifier
+from sklrean.cross_validation import train_test_split
+#matplotlib inline
+#using pandas to read the database stored in the same folder
+data=pd.read_csv('mnist.csv')
+#viewing column heads
+data.head{}
 #extracting data from the dataset and viewing then up dose
 a=data.iloc[3,1:].values
 
@@ -22,7 +33,6 @@ rf.fit(x_train,y_train)
 
 #prediction on test data
 pred=rf.predict(x_test)
-pred
 
 #check prediction accuracy
 s=y_test_values
@@ -32,7 +42,6 @@ count=0
 for i in range(len(pred)):
     if pred(i)==s[i]:
        count=count+i
-count 
 
 #total values that to prediction code was run on
 len(pred)
